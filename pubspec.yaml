@@ -1,0 +1,44 @@
+name: frontend
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+  flutter: ">=2.5.3 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  get_it: ^7.2.0
+  shared_preferences: ^2.0.13
+  flutter_form_builder: ^7.0.0
+  form_builder_validators: ^8.1.1 
+  logger: ^1.1.0
+  retrofit: ^3.0.1
+  equatable: ^2.0.3
+  json_annotation: ^4.3.0
+  json_serializable: ^6.0.0
+  injectable: ^1.5.0
+  flutter_bloc: ^8.0.1
+  provider: ^6.0.1 
+  syncfusion_flutter_charts: ^20.1.52
+  cupertino_icons: ^1.0.3
+  url_launcher: ^6.1.0
+  flutter_multi_formatter: ^2.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.4
+  build_runner: ^2.1.4
+  retrofit_generator: ^4.0.1
+  injectable_generator: ^1.5.3
+
+flutter:
+  uses-material-design: true

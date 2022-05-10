@@ -14,10 +14,9 @@ import '../cubit/activity_cubit/activity_cubit.dart' as _i17;
 import '../cubit/activity_statistic_cubit/activity_statistic_cubit.dart'
     as _i18;
 import '../cubit/alter_activity_cubit/alter_activity_cubit.dart' as _i19;
-import '../cubit/alter_animal_cubit.dart/alter_animal_cubit.dart' as _i20;
-import '../cubit/animal_cubit/animal_cubit.dart' as _i21;
-import '../cubit/animal_page_cubit/animal_page_cubit.dart' as _i22;
-import '../cubit/animal_statistic_cubit/animal_statistic_cubit.dart' as _i23;
+import '../cubit/animal_cubit/animal_cubit.dart' as _i20;
+import '../cubit/animal_page_cubit/animal_page_cubit.dart' as _i21;
+import '../cubit/animal_statistic_cubit/animal_statistic_cubit.dart' as _i22;
 import '../cubit/app_control/app_control_cubit.dart' as _i9;
 import '../cubit/change_password_cubit/change_password_cubit.dart' as _i10;
 import '../cubit/client_cubit/client_cubit.dart' as _i11;
@@ -29,7 +28,7 @@ import '../cubit/user_page_cubit/user_page_cubit.dart' as _i16;
 import '../service/api_service.dart' as _i8;
 import '../service/navigation_service.dart' as _i3;
 import '../service/preferences_service.dart' as _i4;
-import 'api_module.dart' as _i24; // ignore_for_file: unnecessary_lambdas
+import 'api_module.dart' as _i23; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -69,14 +68,12 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i18.ActivityStatisticCubit(get<_i8.ApiService>()));
   gh.factoryParam<_i19.AlterActivityCubit, String?, dynamic>(
       (animal, _) => _i19.AlterActivityCubit(get<_i8.ApiService>(), animal));
-  gh.factory<_i20.AlterAnimalCubit>(
-      () => _i20.AlterAnimalCubit(get<_i8.ApiService>()));
-  gh.factory<_i21.AnimalCubit>(() => _i21.AnimalCubit(get<_i8.ApiService>()));
-  gh.factory<_i22.AnimalPageCubit>(
-      () => _i22.AnimalPageCubit(get<_i8.ApiService>()));
-  gh.factory<_i23.AnimalStatisticCubit>(
-      () => _i23.AnimalStatisticCubit(get<_i8.ApiService>()));
+  gh.factory<_i20.AnimalCubit>(() => _i20.AnimalCubit(get<_i8.ApiService>()));
+  gh.factory<_i21.AnimalPageCubit>(
+      () => _i21.AnimalPageCubit(get<_i8.ApiService>()));
+  gh.factory<_i22.AnimalStatisticCubit>(
+      () => _i22.AnimalStatisticCubit(get<_i8.ApiService>()));
   return get;
 }
 
-class _$ApiModule extends _i24.ApiModule {}
+class _$ApiModule extends _i23.ApiModule {}

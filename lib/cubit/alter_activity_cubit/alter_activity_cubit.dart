@@ -25,9 +25,7 @@ class AlterActivityCubit extends BaseCubit<AlterActivityState> {
           activity: await apiService.getActivity(activityId),
         ));
       }
-      emit(state.copyWith(
-        status: AlterActivityStatus.initial,
-      ));
+      emit(state.copyWith(status: AlterActivityStatus.initial));
     });
   }
 
@@ -45,6 +43,7 @@ class AlterActivityCubit extends BaseCubit<AlterActivityState> {
           animalId: state.animal,
         ),
       );
+      emit(state.copyWith(status: AlterActivityStatus.success));
     });
   }
 
@@ -60,6 +59,7 @@ class AlterActivityCubit extends BaseCubit<AlterActivityState> {
           animalId: state.animal,
         ),
       );
+      emit(state.copyWith(status: AlterActivityStatus.success));
     });
   }
 }

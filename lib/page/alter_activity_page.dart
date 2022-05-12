@@ -8,6 +8,7 @@ import '../cubit/alter_activity_cubit/alter_activity_state.dart';
 import '../di/locator.dart';
 import '../l10n/app_localizations.dart';
 import '../model/activity.dart';
+import 'view/dialog.dart';
 
 enum ActivityField {
   sleepHour,
@@ -58,12 +59,23 @@ class _AlterActivityPageState extends State<AlterActivityPage> {
         );
       }
     }
-    Navigator.of(context).pop();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AlterActivityCubit, AlterActivityState>(
+    return BlocConsumer<AlterActivityCubit, AlterActivityState>(
+      listener: ((context, state) {
+        switch (state.status) {
+          case AlterActivityStatus.error:
+            Dialogs.of(context).showErrorDialog(state.errorMessage);
+            break;
+          case AlterActivityStatus.success:
+            Navigator.of(context).pop();
+            break;
+          default:
+            break;
+        }
+      }),
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
